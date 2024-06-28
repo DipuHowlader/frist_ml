@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ML Prediction Model</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        main {
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"], input[type="number"], input[type="email"] {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            padding: 10px 15px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>ML Prediction Model</h1>
+</header>
+
+<main>
+    <h2>Enter Data for Prediction</h2>
+    <form action="{{url_for('predict_datapoint')}}" method="post">
+        <div class="form-group">
+            <label for="feature1">Temperature:</label>
+            <input name="temperature" type="number" id="feature1" name="feature1" required>
+        </div>
+        <div class="form-group">
+            <label for="feature2">RH:</label>
+            <input name="rh" type="number" id="feature2" name="feature2" required>
+        </div>
+        <div class="form-group">
+            <label for="feature3">WS:</label>
+            <input name="ws" type="number" id="feature3" name="feature3" required>
+        </div>
+        <div class="form-group">
+            <label for="feature4">Rain:</label>
+            <input name="Rain" type="number" id="feature4" name="feature4" required>
+        </div>
+        <div class="form-group">
+            <label for="feature5">FFMC:</label>
+            <input name="FFMC" type="number" id="feature5" name="feature5" required>
+        </div>
+        <div class="form-group">
+            <label for="feature7">DMC:</label>
+            <input name="DMC" type="number" id="feature7" name="feature7" required>
+        </div>
+        <div class="form-group">
+            <label for="feature8">ISI:</label>
+            <input name="ISI" type="number" id="feature8" name="feature8" required>
+        </div>
+        <div class="form-group">
+            <label for="feature9">classes:</label>
+            <input name="classes" type="number" id="feature9" name="feature9" required>
+        </div>
+        <div class="form-group">
+            <label for="feature10">Region:</label>
+            <input name="Region" type="number" id="feature10" name="feature9" required>
+        </div>
+        <div class="form-group">
+            <input name="temperature" type="submit" value="Predict">
+        </div>
+    </form>
+
+    <h2>The fwi prediction is {{results}}</h2>
+</main>
+
+</body>
+</html>
